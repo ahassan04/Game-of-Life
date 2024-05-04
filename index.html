@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Game Of Life</title>
+
+
+    <script type="text/javascript" src="./assetmanager.js"></script>
+    <script type="text/javascript" src="./timer.js"></script>
+    <script type="text/javascript" src="./automata.js"></script>
+    <script type="text/javascript" src="./gameengine.js"></script>
+    <script type="text/javascript" src="./util.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+
+
+</head>
+<body>
+    <canvas id="gameWorld" width="800" height="600" style="background: white; border: 1px solid black"></canvas>
+    <div>
+        <div id="ticks">Ticks: 0</div>
+        <div id="currentSpeed">Speed: 60</div>
+        <label for="speed">Slow</label>
+        <input type="range" id="speed" min="1" max="120" value="60" step="1" oninput="refreshSpeed()">
+        <label for="speed">Fast</label>
+    </div>
+
+   <script>
+     function refreshSpeed() {
+            let speedValue = document.getElementById("speed").value;
+            document.getElementById('currentSpeed').innerHTML = "Speed: " + speedValue;
+        }
+        refreshSpeed();
+</script>
+</body>
+</html>
